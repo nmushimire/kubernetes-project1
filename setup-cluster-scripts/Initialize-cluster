@@ -1,0 +1,9 @@
+# 45.33.7.113 represent the IP address of my master node. Put yours
+sudo kubeadm init --apiserver-advertise-address=45.33.7.113  --apiserver-cert-extra-sans=45.33.7.113 --pod-network-cidr=192.168.0.0/16 --node-name $(hostname) --ignore-preflight-errors Swap
+# At the end of the process, you will get a command that will be used for nodes to join the cluster. Copy the command and keep it handy
+# Run the kubeadm join command that was created after the kubeadm init on the master.
+sudo kubeadm join 50.116.18.167:6443 --token 51mo1i.modpunld4yewb127 \
+        --discovery-token-ca-cert-hash sha256:085dd2fba243b17f06fa76cf5686946026aabd854706e4a4fb377ffb83a14bc7
+ 
+# print join command from master server
+kubeadm token create --print-join-command

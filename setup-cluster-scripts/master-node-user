@@ -1,0 +1,7 @@
+sudo hostnamectl set-hostname master
+exec bash
+useradd -m kuser -s /bin/bash -G sudo
+# set the password of the user
+passwd kuser
+# switch to kuser
+su - kuser
